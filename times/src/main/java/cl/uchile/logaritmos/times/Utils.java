@@ -57,19 +57,25 @@ public class Utils {
             // Primero calculamos el denominador de phi(i)
             double sum = 0;
             for (int i = 0; i < n; i++) {
-                sum += Math.floor(Math.pow(i + 1, alpha));
+                sum += Math.ceil(Math.pow(i + 1, alpha));
             }
 
             // Creamos phi que indica la cantidad de repeticiones de cada elemento i en pi
             // Y lo guardamos en C
             int currentIndex = 0;
             for (int i = 0; i < n; i++) {
-                double fi = Math.floor(Math.pow(i + 1, alpha));
-                int phi = (int) Math.floor((m * fi) / sum);
+                double fi = Math.ceil(Math.pow(i + 1, alpha));
+                int phi = (int) Math.ceil((m * fi) / sum);
                 for (int j = 0; j < phi; j++) {
+                    if(currentIndex >= m){
+                       break;
+                    }
                     c[currentIndex] = pi[i];
                     currentIndex++;
                 }
+            }
+            if(currentIndex < m){
+                throw new RuntimeException("Terminando el programa debido a una excepción.");
             }
         }
 

@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c803860d-a32b-4521-be5f-7c2791f5c62d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/RedBlackTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/RedBlackTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/SplayTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/SplayTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +25,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -48,14 +44,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "17"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.cl.uchile.logaritmos.times.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cl.uchile.logaritmos.bst.App" />

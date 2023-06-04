@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Utils {
     // Función que crea una permutacion aleatoria pi dado n
-    public static int[] createN(int n) {
+    public static Integer[] createN(int n) {
         // Creamos el espacio en memoria para el arreglo
-        int[] pi = new int[n];
+        Integer[] pi = new Integer[n];
 
         // Asignamos valores ordenados al arreglo
         for (int i = 0; i < n; i++) {
@@ -17,7 +17,7 @@ public class Utils {
         Random rand = new Random();
         for (int i = n - 1; i > 0; i--) {
             int j = rand.nextInt(i + 1);
-            int temp = pi[i];
+            Integer temp = pi[i];
             pi[i] = pi[j];
             pi[j] = temp;
         }
@@ -26,10 +26,10 @@ public class Utils {
     }
 
     // Funcion que crea una secuencia de busqueda con elementos alpha-probables
-    public static int[] createC(int[] pi, int n, float alpha) {
+    public static Integer[] createC(Integer[] pi, int n, float alpha) {
         int expM = 27; // m es siempre 2^28
         int m = 1 << expM;
-        int[] c = new int[m];
+        Integer[] c = new Integer[m];
 
         float epsilon = 0.0000001f;
         if (Math.abs(alpha) < epsilon) {
@@ -76,7 +76,7 @@ public class Utils {
         Random rand = new Random();
         for (int i = m - 1; i > 0; i--) {
             int k = rand.nextInt(i + 1);
-            int temp = c[i];
+            Integer temp = c[i];
             c[i] = c[k];
             c[k] = temp;
         }

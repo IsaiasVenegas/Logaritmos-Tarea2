@@ -17,7 +17,7 @@ public class App
         while(expN <= 23){ // n=2^24 == 1<<23
             // Creamos un arreglo pi con n elementos
             int n = 1 << expN;
-            int[] pi = Utils.createN(n);
+            Integer[] pi = Utils.createN(n);
 
             // Insertamos los elementos de pi en un Splay Tree
             SplayTree<Integer> splayTree = new SplayTree<>();
@@ -40,14 +40,14 @@ public class App
 
                 for(int reps = 1; reps<=5; reps++){
                     // Creamos un arreglo c con m elementos (m=2^28) con elementos repetidos segun alpha
-                    int[] c = Utils.createC(pi, n, alphas[a]);
+                    Integer[] c = Utils.createC(pi, n, alphas[a]);
 
                     // Buscamos los elementos de c en el Splay Tree y medimos su tiempo
                     long startTime = System.currentTimeMillis();
 
                     for (int i = 0; i < c.length; i++) {
                         if(c[i]!=0){ // Omitimos los 0s
-                            splayTree.findRecursively(1); // TODO
+                            splayTree.find(c[i]);
                         }
                     }
 
@@ -63,7 +63,7 @@ public class App
 
                     for (int i = 0; i < c.length; i++) {
                         if(c[i]!=0){ // Omitimos los 0s
-                            redBlackTree.find(1); // TODO
+                            redBlackTree.find(c[i]);
                         }
                     }
 

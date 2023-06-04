@@ -134,15 +134,21 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
     }
 
     @Override
-    public void traverse() {
-        traverseInOrder(root);
+    public void find(T data) {
+        find(root, data);
     }
 
-    private void traverseInOrder(Node<T> node) {
-        if (node != null) {
-            traverseInOrder(node.getLeftChild());
-            System.out.println(node);
-            traverseInOrder(node.getRightChild());
+    private void find(Node<T> node, T value) {
+        while (node != null && node.getData() != value) {
+            if (value.compareTo(node.getData()) < 0) {
+                node = node.getLeftChild();
+            } else {
+                node = node.getRightChild();
+            }
+        }
+    
+        if (node == null) {
+            System.out.println("RBT: No se ha encontrado " + value);
         }
     }
 
@@ -151,14 +157,13 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
         if (isEmpty()) {
             return null;
         }
-        return getMax(root);
-    }
 
-    private T getMax(Node<T> node) {
-        if (node.getRightChild() != null) {
-            return getMax(node.getRightChild());
+        Node<T> currentNode = root;
+        while (currentNode.getRightChild() != null) {
+            currentNode = currentNode.getRightChild();
         }
-        return node.getData();
+
+        return currentNode.getData();
     }
 
     @Override
@@ -166,37 +171,18 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
         if (isEmpty()) {
             return null;
         }
-        return getMin(root);
-    }
 
-    private T getMin(Node<T> node) {
-        if (node.getLeftChild() != null) {
-            return getMin(node.getLeftChild());
+        Node<T> currentNode = root;
+        while (currentNode.getLeftChild() != null) {
+            currentNode = currentNode.getLeftChild();
         }
-        return node.getData();
+
+        return currentNode.getData();
     }
 
     @Override
     public boolean isEmpty() {
         return root == null;
     }
-
-    public void find(T data) {
-        find(root, data);
-    }
-
-    private void find(Node<T> node, T value) {
-        if (node == null || node.getData() == value) {
-            if(node==null){
-                System.out.println("RBT: No se ha encontrado "+value);
-            }
-            return;
-        }
-
-        if (value.compareTo(node.getData()) < 0) {
-            find(node.getLeftChild(), value);
-        } else {
-            find(node.getRightChild(), value);
-        }
-    }
+    
 }

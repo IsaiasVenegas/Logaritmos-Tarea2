@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c803860d-a32b-4521-be5f-7c2791f5c62d" name="Changes" comment="">
+    <list default="true" id="c803860d-a32b-4521-be5f-7c2791f5c62d" name="Changes" comment="Use int">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/Utils.java" afterDir="false" />
@@ -109,8 +109,8 @@
       <list>
         <item itemvalue="Application.cl.uchile.logaritmos.times.App" />
         <item itemvalue="Application.cl.uchile.logaritmos.rbt.App" />
-        <item itemvalue="Application.cl.uchile.logaritmos.st.App" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.cl.uchile.logaritmos.st.App" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685867376308</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Use Integer">
+      <created>1685871955226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685871955226</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +153,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Import files from previous repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Import files from previous repo" />
+    <MESSAGE value="Use Integer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use Integer" />
   </component>
 </project>

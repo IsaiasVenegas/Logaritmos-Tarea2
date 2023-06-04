@@ -26,7 +26,6 @@ package cl.uchile.logaritmos.st;
 
 import lombok.Data;
 import lombok.NonNull;
-import lombok.ToString;
 
 @Data
 public class Node<T extends Comparable<T>> {
@@ -36,8 +35,6 @@ public class Node<T extends Comparable<T>> {
 
     private Node<T> leftChild;
     private Node<T> rightChild;
-
-    @ToString.Exclude
     private Node<T> parent;
 
     public Node<T> getGrandParent() {

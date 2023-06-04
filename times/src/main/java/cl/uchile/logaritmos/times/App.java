@@ -13,8 +13,8 @@ public class App
     public static void main( String[] args )
     {
         float[] alphas = {0.0f, 0.5f, 1.0f, 1.5f}; // equiprobables, 50% de exito, 100% de exito, 150% de exito
-        int expN = 15; //  n=2^16 == 1<<15
-        while(expN <= 23){ // n=2^24 == 1<<23
+        int expN = 16; //  n=2^16 == 1<<16
+        while(expN <= 20){ // n=2^20 == 1<<20
             // Creamos un arreglo pi con n elementos
             int n = 1 << expN;
             Integer[] pi = Utils.createN(n);
@@ -22,13 +22,13 @@ public class App
             // Insertamos los elementos de pi en un Splay Tree
             SplayTree<Integer> splayTree = new SplayTree<>();
             for (int i = 0; i < n; i++) {
-                splayTree = (SplayTree<Integer>) splayTree.insert(pi[i]);
+                splayTree.insert(pi[i]);
             }
 
             // Insertar los elementos de pi en un Red-Black Tree
             RedBlackTree<Integer> redBlackTree = new RedBlackTree<>();
             for (int i = 0; i < n; i++) {
-                redBlackTree = (RedBlackTree<Integer>) redBlackTree.insert(pi[i]);
+                redBlackTree.insert(pi[i]);
             }
 
             for(int a=0; a<=3; a++){
@@ -38,7 +38,7 @@ public class App
                 long totalTimeRBT = 0;
                 long[] partialTimesRBT = new long[5];
 
-                for(int reps = 1; reps<=5; reps++){
+                for(int reps = 1; reps<=3; reps++){
                     // Creamos un arreglo c con m elementos (m=2^28) con elementos repetidos segun alpha
                     Integer[] c = Utils.createC(pi, n, alphas[a]);
 
@@ -46,9 +46,7 @@ public class App
                     long startTime = System.currentTimeMillis();
 
                     for (int i = 0; i < c.length; i++) {
-                        if(c[i]!=0){ // Omitimos los 0s
-                            splayTree.find(c[i]);
-                        }
+                        splayTree.find(c[i]);
                     }
 
                     long endTime = System.currentTimeMillis();
@@ -56,15 +54,13 @@ public class App
                     totalTimeST += parcialTime;
                     partialTimesST[reps-1] = parcialTime;
 
-                    System.out.println("expN= "+ (expN+1) +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Splay Tree: " + parcialTime + " ms");
+                    System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Splay Tree: " + parcialTime + " ms");
 
                     // Buscamos los elementos de c en el Red-Black Tree y medimos su tiempo
                     startTime = System.currentTimeMillis();
 
                     for (int i = 0; i < c.length; i++) {
-                        if(c[i]!=0){ // Omitimos los 0s
-                            redBlackTree.find(c[i]);
-                        }
+                        redBlackTree.find(c[i]);
                     }
 
                     endTime = System.currentTimeMillis();
@@ -72,7 +68,7 @@ public class App
                     totalTimeRBT += parcialTime;
                     partialTimesRBT[reps-1] = parcialTime;
 
-                    System.out.println("expN= "+ (expN+1) +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Red-Black Tree: " + parcialTime + " ms");
+                    System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Red-Black Tree: " + parcialTime + " ms");
                 }
                 System.out.println("====================================================================================================");
 
@@ -83,9 +79,9 @@ public class App
                 }
                 varianceST /= 5;
                 long standardDeviationST = (long) Math.sqrt(varianceST);
-                System.out.println("expN= "+ (expN+1) +" | alpha= "+ alphas[a]+ " | Tiempo promedio de busqueda en Splay Tree: " + averageTimeST + " ms");
-                System.out.println("expN= "+ (expN+1) +" | alpha= "+ alphas[a]+ " | Varianza en tiempo de busqueda en Splay Tree: " + varianceST + " ms^2");
-                System.out.println("expN= "+ (expN+1) +" | alpha= "+ alphas[a]+ " | Desviacion estandar de busqueda en Splay Tree: " + standardDeviationST + " ms");
+                System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo promedio de busqueda en Splay Tree: " + averageTimeST + " ms");
+                System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Varianza en tiempo de busqueda en Splay Tree: " + varianceST + " ms^2");
+                System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Desviacion estandar de busqueda en Splay Tree: " + standardDeviationST + " ms");
 
                 long averageTimeRBT = totalTimeRBT/5;
                 long varianceRBT = 0;
@@ -94,9 +90,9 @@ public class App
                 }
                 varianceRBT /= 5;
                 long standardDeviationRBT = (long) Math.sqrt(varianceRBT);
-                System.out.println("expN= "+ (expN+1) +" | alpha= "+ alphas[a]+ " | Tiempo promedio de busqueda en Red-Black Tree: " + averageTimeRBT + " ms");
-                System.out.println("expN= "+ (expN+1) +" | alpha= "+ alphas[a]+ " | Varianza en tiempo de busqueda en Red-Black Tree: " + varianceRBT + " ms^2");
-                System.out.println("expN= "+ (expN+1) +" | alpha= "+ alphas[a]+ " | Desviacion estandar de busqueda en Red-Black Tree: " + standardDeviationRBT + " ms");
+                System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo promedio de busqueda en Red-Black Tree: " + averageTimeRBT + " ms");
+                System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Varianza en tiempo de busqueda en Red-Black Tree: " + varianceRBT + " ms^2");
+                System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Desviacion estandar de busqueda en Red-Black Tree: " + standardDeviationRBT + " ms");
 
                 System.out.println("====================================================================================================");
             }

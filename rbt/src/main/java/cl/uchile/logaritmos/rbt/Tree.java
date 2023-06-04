@@ -30,8 +30,6 @@ public interface Tree<T extends Comparable<T>> {
 
     void find(T data);
 
-    void traverse();
-
     T getMax();
 
     T getMin();

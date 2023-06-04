@@ -34,43 +34,37 @@ public class SplayTree<T extends Comparable<T>> implements Tree<T> {
         return this;
     }
 
-    private Node<T> insert(Node<T> node, Node<T> nodeToInsert) {
+    private Node<T> insert(Node<T> node, Node<T> newNode) {
         if (node == null) {
-            return nodeToInsert;
+            return newNode;
         }
-        if (nodeToInsert.getData().compareTo(node.getData()) < 0) {
-            node.setLeftChild(insert(node.getLeftChild(), nodeToInsert));
-            node.getLeftChild().setParent(node);
-        } else if (nodeToInsert.getData().compareTo(node.getData()) > 0) {
-            node.setRightChild(insert(node.getRightChild(), nodeToInsert));
-            node.getRightChild().setParent(node);
+
+        Node<T> currentNode = root;
+        Node<T> parentNode;
+
+        while (true) {
+            parentNode = currentNode;
+
+            if (newNode.getData().compareTo(currentNode.getData()) < 0) {
+                currentNode = currentNode.getLeftChild();
+                if (currentNode == null) {
+                    parentNode.setLeftChild(newNode);
+                    newNode.setParent(parentNode);
+                    break;
+                }
+            } else if (newNode.getData().compareTo(currentNode.getData()) > 0) {
+                currentNode = currentNode.getRightChild();
+                if (currentNode == null) {
+                    parentNode.setRightChild(newNode);
+                    newNode.setParent(parentNode);
+                    break;
+                }
+            } else {
+                // Node with the same data already exists, handle accordingly
+                break;
+            }
         }
-        return node;
-    }
 
-    @Override
-    public void delete(T data) {
-        root = delete(data, root);
-    }
-
-    private Node<T> delete(T data, Node<T> node) {
-        if (node == null) return null;
-
-        if (data.compareTo(node.getData()) < 0) {
-            node.setLeftChild(delete(data, node.getLeftChild()));
-            if (node.getLeftChild() != null) node.getLeftChild().setParent(node);
-        } else if (data.compareTo(node.getData()) > 0) {
-            node.setRightChild(delete(data, node.getRightChild()));
-            if (node.getRightChild() != null) node.getRightChild().setParent(node);
-        } else {
-            // One Child or Leaf Node (no children)
-            if (node.getLeftChild() == null) return node.getRightChild();
-            else if (node.getRightChild() == null) return node.getLeftChild();
-            // Two Children
-            node.setData(getMax(node.getLeftChild()));
-            node.setLeftChild(delete(node.getData(), node.getLeftChild()));
-            if (node.getLeftChild() != null) node.getLeftChild().setParent(node);
-        }
         return node;
     }
 
@@ -87,45 +81,26 @@ public class SplayTree<T extends Comparable<T>> implements Tree<T> {
         System.out.println("ST: No se ha encontrado "+ data);
     }
 
-    @Override
-    public void findRecursively(T data) {
-        find(root, data);
-    }
-
-    public void find(Node<T> node, T data) {
-        if (node != null) {
-            if (node.getData().compareTo(data) == 0) {
-                splay(node);
-                return;
-            }
-            Node<T> nextNode = data.compareTo(node.getData()) > 0 ? node.getRightChild() : node.getLeftChild();
-            find(nextNode, data);
-        } else {
-            System.out.println("ST: No se ha encontrado " + data);
-        }
-    }
-
     private void splay(Node<T> node) {
-        while(node != root) {
-            Node<T> parent = node.getParent();
-            if (node.getGrandParent() == null) {
+        while (node.getParent() != null) {
+            if (node.getParent().getParent() == null) {
                 if (node.isLeftChild()) {
-                    rotateRight(parent);
+                    rotateRight(node.getParent());
                 } else {
-                    rotateLeft(parent);
+                    rotateLeft(node.getParent());
                 }
-            } else if (node.isLeftChild() && parent.isLeftChild()) {
-                rotateRight(node.getGrandParent());
-                rotateRight(parent);
-            } else if (node.isRightChild() && parent.isRightChild()) {
-                rotateLeft(node.getGrandParent());
-                rotateLeft(parent);
-            } else if (node.isLeftChild() && parent.isRightChild()) {
-                rotateRight(parent);
-                rotateLeft(parent);
+            } else if (node.isLeftChild() && node.getParent().isLeftChild()) {
+                rotateRight(node.getParent().getParent());
+                rotateRight(node.getParent());
+            } else if (node.isRightChild() && node.getParent().isRightChild()) {
+                rotateLeft(node.getParent().getParent());
+                rotateLeft(node.getParent());
+            } else if (node.isLeftChild() && node.getParent().isRightChild()) {
+                rotateRight(node.getParent());
+                rotateLeft(node.getParent());
             } else {
-                rotateLeft(parent);
-                rotateRight(parent);
+                rotateLeft(node.getParent());
+                rotateRight(node.getParent());
             }
         }
     }
@@ -169,31 +144,17 @@ public class SplayTree<T extends Comparable<T>> implements Tree<T> {
     }
 
     @Override
-    public void traverse() {
-        traverseInOrder(root);
-    }
-
-    private void traverseInOrder(Node<T> node) {
-        if (node != null) {
-            traverseInOrder(node.getLeftChild());
-            System.out.println(node);
-            traverseInOrder(node.getRightChild());
-        }
-    }
-
-    @Override
     public T getMax() {
         if (isEmpty()) {
             return null;
         }
-        return getMax(root);
-    }
 
-    private T getMax(Node<T> node) {
-        if (node.getRightChild() != null) {
-            return getMax(node.getRightChild());
+        Node<T> currentNode = root;
+        while (currentNode.getRightChild() != null) {
+            currentNode = currentNode.getRightChild();
         }
-        return node.getData();
+
+        return currentNode.getData();
     }
 
     @Override
@@ -201,14 +162,13 @@ public class SplayTree<T extends Comparable<T>> implements Tree<T> {
         if (isEmpty()) {
             return null;
         }
-        return getMin(root);
-    }
 
-    private T getMin(Node<T> node) {
-        if (node.getLeftChild() != null) {
-            return getMin(node.getLeftChild());
+        Node<T> currentNode = root;
+        while (currentNode.getLeftChild() != null) {
+            currentNode = currentNode.getLeftChild();
         }
-        return node.getData();
+
+        return currentNode.getData();
     }
 
     @Override

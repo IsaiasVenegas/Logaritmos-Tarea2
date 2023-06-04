@@ -10,7 +10,7 @@ public class Utils {
 
         // Asignamos valores ordenados al arreglo
         for (int i = 0; i < n; i++) {
-            pi[i] = i + 1;
+            pi[i] = Integer.valueOf(i + 1);
         }
 
         // Desordenamos el arreglo
@@ -27,7 +27,7 @@ public class Utils {
 
     // Funcion que crea una secuencia de busqueda con elementos alpha-probables
     public static Integer[] createC(Integer[] pi, int n, float alpha) {
-        int expM = 27; // m es siempre 2^28
+        int expM = 28; // m es siempre 2^28
         int m = 1 << expM;
         Integer[] c = new Integer[m];
 
@@ -42,11 +42,12 @@ public class Utils {
 
             // Creamos phi que indica la cantidad de repeticiones de cada elemento i en pi
             // Y lo guardamos en C
-            float phiDecimal = (1 << expM) >> expN;
-            int phiInteger = (int) Math.ceil(phiDecimal);
+            int potencia = expM - expN;
+            int phi = 1<<potencia;
+
             int currentIndex = 0;
             for (int i = 0; i < n; i++) {
-                for (int j = 0; j < phiInteger; j++) {
+                for (int j = 0; j < phi; j++) {
                     c[currentIndex] = pi[i];
                     currentIndex++;
                 }

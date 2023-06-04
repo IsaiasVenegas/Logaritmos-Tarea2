@@ -4,41 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c803860d-a32b-4521-be5f-7c2791f5c62d" name="Changes" comment="Import files from previous repo">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bst/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bst/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bst/src/main/java/cl/uchile/logaritmos/bst/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bst/src/main/java/cl/uchile/logaritmos/bst/BinarySearchTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bst/src/main/java/cl/uchile/logaritmos/bst/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bst/src/main/java/cl/uchile/logaritmos/bst/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bst/src/test/java/cl/uchile/logaritmos/bst/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rbt/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rbt/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/RedBlackTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rbt/src/test/java/cl/uchile/logaritmos/rbt/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cl/uchile/logaritmos/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/logaritmos/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/SplayTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st/src/test/java/cl/uchile/logaritmos/st/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/times/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/times/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/times/src/test/java/cl/uchile/logaritmos/times/AppTest.java" afterDir="false" />
+    <list default="true" id="c803860d-a32b-4521-be5f-7c2791f5c62d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/RedBlackTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/RedBlackTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/SplayTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/SplayTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +28,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f719bbd4-4c34-487b-80c3-e5c331ae0434" />
+        <option name="url" value="git@github.com:IsaiasVenegas/Tarea2-Logaritmos.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectId" id="2QjQf3X3hRYstekTnuTWfmepBjK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -126,8 +112,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.cl.uchile.logaritmos.times.App" />
-        <item itemvalue="Application.cl.uchile.logaritmos.st.App" />
         <item itemvalue="Application.cl.uchile.logaritmos.rbt.App" />
+        <item itemvalue="Application.cl.uchile.logaritmos.st.App" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -141,7 +127,26 @@
       <option name="presentableId" value="Default" />
       <updated>1685864610531</updated>
     </task>
+    <task id="LOCAL-00001" summary="Import files from previous repo">
+      <created>1685867376308</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685867376308</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Import files from previous repo" />

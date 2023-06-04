@@ -22,13 +22,13 @@ public class App
             // Insertamos los elementos de pi en un Splay Tree
             SplayTree<Integer> splayTree = new SplayTree<>();
             for (int i = 0; i < n; i++) {
-                splayTree.insert(pi[i]);
+                splayTree = (SplayTree<Integer>) splayTree.insert(pi[i]);
             }
 
             // Insertar los elementos de pi en un Red-Black Tree
             RedBlackTree<Integer> redBlackTree = new RedBlackTree<>();
             for (int i = 0; i < n; i++) {
-                redBlackTree.insert(pi[i]);
+                redBlackTree = (RedBlackTree<Integer>) redBlackTree.insert(pi[i]);
             }
 
             for(int a=0; a<=3; a++){
@@ -47,9 +47,8 @@ public class App
 
                     for (int i = 0; i < c.length; i++) {
                         if(c[i]!=0){ // Omitimos los 0s
-                            splayTree.find(c[i]);
+                            splayTree.findRecursively(1); // TODO
                         }
-
                     }
 
                     long endTime = System.currentTimeMillis();
@@ -64,7 +63,7 @@ public class App
 
                     for (int i = 0; i < c.length; i++) {
                         if(c[i]!=0){ // Omitimos los 0s
-                            redBlackTree.find(c[i]);
+                            redBlackTree.find(1); // TODO
                         }
                     }
 

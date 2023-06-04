@@ -48,6 +48,9 @@ public class Node<T extends Comparable<T>> {
     private Node<T> parent;
 
     public boolean isLeftChild() {
+        if(parent == null){
+            return false;
+        }
         return this == parent.getLeftChild();
     }
 

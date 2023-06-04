@@ -84,7 +84,7 @@ public class SplayTree<T extends Comparable<T>> implements Tree<T> {
             }
             node = data.compareTo(node.getData()) < 0 ? node.getLeftChild() : node.getRightChild();
         }
-        System.out.println("No se ha encontrado "+ data);
+        System.out.println("ST: No se ha encontrado "+ data);
     }
 
     @Override
@@ -100,6 +100,8 @@ public class SplayTree<T extends Comparable<T>> implements Tree<T> {
             }
             Node<T> nextNode = data.compareTo(node.getData()) > 0 ? node.getRightChild() : node.getLeftChild();
             find(nextNode, data);
+        } else {
+            System.out.println("ST: No se ha encontrado " + data);
         }
     }
 

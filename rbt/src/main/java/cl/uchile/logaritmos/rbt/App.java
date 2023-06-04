@@ -39,6 +39,9 @@ public class App {
         System.out.println("Max is: " + redBlackTree.getMax());
         System.out.println("Min is: " + redBlackTree.getMin());
 
+        redBlackTree.find(10);
+        redBlackTree.find(15);
+
     }
 
 }

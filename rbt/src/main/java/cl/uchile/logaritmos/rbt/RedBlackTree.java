@@ -57,7 +57,7 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
         Node<T> parent = node.getParent();
         if (node != root && parent.getColor() == RED) {
             Node<T> grandParent = node.getParent().getParent();
-            Node<T> uncle = parent.isLeftChild() ?
+            Node<T> uncle = grandParent == null ? null : parent.isLeftChild() ?
                     grandParent.getRightChild() : grandParent.getLeftChild();
             if (uncle != null && uncle.getColor() == RED) { // Recoloring
                 handleRecoloring(parent, uncle, grandParent);
@@ -75,9 +75,11 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
             rotateRight(parent);
         }
         parent.flipColor();
-        grandParent.flipColor();
-        rotateLeft(grandParent);
-        recolorAndRotate(node.isLeftChild() ? grandParent : parent);
+        if(grandParent != null){
+            grandParent.flipColor();
+            rotateLeft(grandParent);
+            recolorAndRotate(node.isLeftChild() ? grandParent : parent);
+        }
     }
 
     private void handleLeftSituations(Node<T> node, Node<T> parent, Node<T> grandParent) {
@@ -186,7 +188,7 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
     private void find(Node<T> node, T value) {
         if (node == null || node.getData() == value) {
             if(node==null){
-                System.out.println("No se encontro el elemento "+value);
+                System.out.println("RBT: No se ha encontrado "+value);
             }
             return;
         }

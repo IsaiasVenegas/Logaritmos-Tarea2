@@ -72,23 +72,23 @@ public class App
                 }
                 System.out.println("====================================================================================================");
 
-                long averageTimeST = totalTimeST/5;
+                long averageTimeST = totalTimeST/3;
                 long varianceST = 0;
-                for(int i=0; i<5; i++){
+                for(int i=0; i<3; i++){
                     varianceST += Math.pow(partialTimesST[i]-averageTimeST, 2);
                 }
-                varianceST /= 5;
+                varianceST /= 3;
                 long standardDeviationST = (long) Math.sqrt(varianceST);
                 System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo promedio de busqueda en Splay Tree: " + averageTimeST + " ms");
                 System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Varianza en tiempo de busqueda en Splay Tree: " + varianceST + " ms^2");
                 System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Desviacion estandar de busqueda en Splay Tree: " + standardDeviationST + " ms");
 
-                long averageTimeRBT = totalTimeRBT/5;
+                long averageTimeRBT = totalTimeRBT/3;
                 long varianceRBT = 0;
-                for(int i=0; i<5; i++){
+                for(int i=0; i<3; i++){
                     varianceRBT += Math.pow(partialTimesRBT[i]-averageTimeRBT, 2);
                 }
-                varianceRBT /= 5;
+                varianceRBT /= 3;
                 long standardDeviationRBT = (long) Math.sqrt(varianceRBT);
                 System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo promedio de busqueda en Red-Black Tree: " + averageTimeRBT + " ms");
                 System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Varianza en tiempo de busqueda en Red-Black Tree: " + varianceRBT + " ms^2");

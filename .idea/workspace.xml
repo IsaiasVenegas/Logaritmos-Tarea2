@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c803860d-a32b-4521-be5f-7c2791f5c62d" name="Changes" comment="Import files from previous repo">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bst/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bst/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bst/src/main/java/cl/uchile/logaritmos/bst/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bst/src/main/java/cl/uchile/logaritmos/bst/BinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bst/src/main/java/cl/uchile/logaritmos/bst/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bst/src/main/java/cl/uchile/logaritmos/bst/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bst/src/test/java/cl/uchile/logaritmos/bst/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rbt/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rbt/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/RedBlackTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rbt/src/main/java/cl/uchile/logaritmos/rbt/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rbt/src/test/java/cl/uchile/logaritmos/rbt/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cl/uchile/logaritmos/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/logaritmos/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/SplayTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st/src/main/java/cl/uchile/logaritmos/st/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st/src/test/java/cl/uchile/logaritmos/st/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/times/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/times/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/times/src/main/java/cl/uchile/logaritmos/times/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/times/src/test/java/cl/uchile/logaritmos/times/AppTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2QjQf3X3hRYstekTnuTWfmepBjK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "17"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.cl.uchile.logaritmos.times.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.logaritmos.bst.App" />
+      <module name="bst" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cl.uchile.logaritmos.bst.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cl.uchile.logaritmos.rbt.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.logaritmos.rbt.App" />
+      <module name="rbt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cl.uchile.logaritmos.rbt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cl.uchile.logaritmos.st.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.logaritmos.st.App" />
+      <module name="st" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cl.uchile.logaritmos.st.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cl.uchile.logaritmos.times.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.logaritmos.times.App" />
+      <module name="times" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cl.uchile.logaritmos.times.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.cl.uchile.logaritmos.times.App" />
+        <item itemvalue="Application.cl.uchile.logaritmos.st.App" />
+        <item itemvalue="Application.cl.uchile.logaritmos.rbt.App" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c803860d-a32b-4521-be5f-7c2791f5c62d" name="Changes" comment="" />
+      <created>1685864610531</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685864610531</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Import files from previous repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Import files from previous repo" />
+  </component>
+</project>

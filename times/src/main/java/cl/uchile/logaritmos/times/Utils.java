@@ -76,7 +76,9 @@ public class Utils {
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < phis[i]; j++) {
                     if(currentIndex >= lengthOfC){
-                        throw new RuntimeException("Error en la creacion de C");
+                        //throw new RuntimeException("Error en la creacion de C");
+                        System.out.println("Error en la creacion de C");
+                        break;
                     }
                     c[currentIndex] = pi[i];
                     currentIndex++;

@@ -27,12 +27,13 @@ public class Utils {
 
     // Funcion que crea una secuencia de busqueda con elementos alpha-probables
     public static Integer[] createC(Integer[] pi, int n, float alpha) {
-        int expM = 28; // m es siempre 2^28
+        int expM = 28; // m es como minimo 2^28
         int m = 1 << expM;
-        Integer[] c = new Integer[m];
+        Integer[] c;
 
         float epsilon = 0.0000001f;
         if (Math.abs(alpha) < epsilon) {
+            c = new Integer[m];
             // Caso Equiprobable
             int expN = 0;
             // Calculamos el exponente de N
@@ -57,31 +58,35 @@ public class Utils {
             // Primero calculamos el denominador de phi(i)
             double sum = 0;
             for (int i = 0; i < n; i++) {
-                sum += Math.ceil(Math.pow(i + 1, alpha));
+                sum += Math.floor(Math.pow(i + 1, alpha));
             }
 
-            // Creamos phi que indica la cantidad de repeticiones de cada elemento i en pi
-            // Y lo guardamos en C
+            int[] phis = new int[n];
+            int lengthOfC = 0;
+            // Calculamos phi(i) que indica la cantidad de repeticiones de cada elemento i de pi
+            for (int i = 0; i < n; i++) {
+                double fi = Math.floor(Math.pow(i + 1, alpha));
+                int phi_i = (int) Math.ceil((m * fi) / sum);
+                phis[i] = phi_i;
+                lengthOfC+=phi_i;
+            }
+            c = new Integer[lengthOfC];
+            // Llenamos C con los elementos de pi segun phi(i)
             int currentIndex = 0;
             for (int i = 0; i < n; i++) {
-                double fi = Math.ceil(Math.pow(i + 1, alpha));
-                int phi = (int) Math.ceil((m * fi) / sum);
-                for (int j = 0; j < phi; j++) {
-                    if(currentIndex >= m){
-                       break;
+                for (int j = 0; j < phis[i]; j++) {
+                    if(currentIndex >= lengthOfC){
+                        throw new RuntimeException("Error en la creacion de C");
                     }
                     c[currentIndex] = pi[i];
                     currentIndex++;
                 }
             }
-            if(currentIndex < m){
-                throw new RuntimeException("Terminando el programa debido a una excepción.");
-            }
         }
 
         // Desordenamos el arreglo para finalmente retornarlo
         Random rand = new Random();
-        for (int i = m - 1; i > 0; i--) {
+        for (int i = c.length - 1; i > 0; i--) {
             int k = rand.nextInt(i + 1);
             Integer temp = c[i];
             c[i] = c[k];

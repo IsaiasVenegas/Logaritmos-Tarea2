@@ -14,7 +14,7 @@ public class App
     {
         float[] alphas = {0.0f, 0.5f, 1.0f, 1.5f}; // equiprobables, 50% de exito, 100% de exito, 150% de exito
         int expN = 16; //  n=2^16 == 1<<16
-        while(expN <= 20){ // n=2^20 == 1<<20
+        while(expN <= 24){ // n=2^20 == 1<<20
             // Creamos un arreglo pi con n elementos
             int n = 1 << expN;
             Integer[] pi = Utils.createN(n);
@@ -38,10 +38,21 @@ public class App
                 long totalTimeRBT = 0;
                 long[] partialTimesRBT = new long[5];
 
-                for(int reps = 1; reps<=3; reps++){
-                    // Creamos un arreglo c con m elementos (m=2^28) con elementos repetidos segun alpha
-                    Integer[] c = Utils.createC(pi, n, alphas[a]);
+                // Creamos un arreglo c con m elementos a buscar
+                Integer[] c = Utils.createC(pi, n, alphas[a]);
 
+                // Obtener la instancia de Runtime
+                Runtime runtime = Runtime.getRuntime();
+
+                // Calcular el espacio ocupado
+                long totalMemory = runtime.totalMemory();
+                long freeMemory = runtime.freeMemory();
+                long usedMemory = totalMemory - freeMemory;
+
+                // También puedes imprimirlo en otras unidades, como kilobytes, megabytes, etc.
+                System.out.println("Espacio ocupado: " + (usedMemory / 1024) + " KB");
+
+                for(int reps = 1; reps<=3; reps++){
                     // Buscamos los elementos de c en el Splay Tree y medimos su tiempo
                     long startTime = System.currentTimeMillis();
 
@@ -56,6 +67,8 @@ public class App
 
                     System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Splay Tree: " + parcialTime + " ms");
 
+                    System.out.println("-------------------------------------------");
+
                     // Buscamos los elementos de c en el Red-Black Tree y medimos su tiempo
                     startTime = System.currentTimeMillis();
 
@@ -69,6 +82,18 @@ public class App
                     partialTimesRBT[reps-1] = parcialTime;
 
                     System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Red-Black Tree: " + parcialTime + " ms");
+
+                    // Reconstruimos los arboles
+                    splayTree = new SplayTree<>();
+                    for (int i = 0; i < n; i++) {
+                        splayTree.insert(pi[i]);
+                    }
+
+                   
+                    redBlackTree = new RedBlackTree<>();
+                    for (int i = 0; i < n; i++) {
+                        redBlackTree.insert(pi[i]);
+                    }
                 }
                 System.out.println("====================================================================================================");
 
@@ -82,6 +107,10 @@ public class App
                 System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo promedio de busqueda en Splay Tree: " + averageTimeST + " ms");
                 System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Varianza en tiempo de busqueda en Splay Tree: " + varianceST + " ms^2");
                 System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Desviacion estandar de busqueda en Splay Tree: " + standardDeviationST + " ms");
+
+
+                System.out.println("-------------------------------------------");
+
 
                 long averageTimeRBT = totalTimeRBT/3;
                 long varianceRBT = 0;

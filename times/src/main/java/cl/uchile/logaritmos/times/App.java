@@ -53,34 +53,34 @@ public class App
 
                 for(int reps = 1; reps<=3; reps++){
                     // Buscamos los elementos de c en el Splay Tree y medimos su tiempo
-                    long startTime = System.currentTimeMillis();
+                    long startTimeST = System.currentTimeMillis();
 
                     for (int i = 0; i < c.length; i++) {
                         splayTree.find(c[i]);
                     }
 
-                    long endTime = System.currentTimeMillis();
-                    long parcialTime = endTime - startTime;
-                    totalTimeST += parcialTime;
-                    partialTimesST[reps-1] = parcialTime;
+                    long endTimeST = System.currentTimeMillis();
+                    long partialTimeST = endTimeST - startTimeST;
+                    totalTimeST += partialTimeST;
+                    partialTimesST[reps-1] = partialTimeST;
 
                     System.out.println("-------------------------------------------");
 
-                    System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Splay Tree: " + parcialTime + " ms");
+                    System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Splay Tree: " + partialTimeST + " ms");
 
                     // Buscamos los elementos de c en el Red-Black Tree y medimos su tiempo
-                    startTime = System.currentTimeMillis();
+                    long startTimeRB = System.currentTimeMillis();
 
                     for (int i = 0; i < c.length; i++) {
                         redBlackTree.find(c[i]);
                     }
 
-                    endTime = System.currentTimeMillis();
-                    parcialTime = endTime - startTime;
-                    totalTimeRBT += parcialTime;
-                    partialTimesRBT[reps-1] = parcialTime;
+                    long endTimeRB = System.currentTimeMillis();
+                    long partialTimeRB = endTimeRB - startTimeRB;
+                    totalTimeRBT += partialTimeRB;
+                    partialTimesRBT[reps-1] = partialTimeRB;
 
-                    System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Red-Black Tree: " + parcialTime + " ms");
+                    System.out.println("expN= "+ expN +" | alpha= "+ alphas[a]+ " | Tiempo de busqueda en Red-Black Tree: " + partialTimeRB + " ms");
                 }
                 System.out.println("====================================================================================================");
 
